@@ -253,6 +253,7 @@ For alias name-> then firstname and lastname will be name and surname respective
 
 /*
 ** Update **
+UPDATE means to update the data of the table.
 01. UPDATE employee SET lastname='Jahan' WHERE firstname='Nusaiba';
 Ans: This command will update the lastname of Nusaiba to Jahan where firstname='Nusaiba'
 02. UPDATE employee SET location='Gazaria' WHERE firstname='Emran';
@@ -268,7 +269,7 @@ Ans: This command will change the location of Farjana Maya to Munshiganj.
 /*
 ** Delete **
 01. DELETE FROM employee WHERE id=3;
-Ans: This command will delete the record of id 3 from the table employee.
+Ans: This command will delete the record of id 3 from the table employee. It deletes record one by one.
 02. DELETE FROM employee WHERE firstname='Nusaiba' and lastname='Sadifa';
 Ans: This command will delete the record of Nusaiba Sadifa from the table employee.
 03. DELETE FROM employee WHERE firstname='Nusaiba';
@@ -284,19 +285,73 @@ Ans: This command will delete the record of Nusaiba Sadifa and age 2 from the ta
 */
 
 /*
-** Delete **
-01. DELETE FROM employee WHERE firstname='Nusaiba';
-Ans: This command will delete the record of Nusaiba from the table employee.
-02. DELETE FROM employee WHERE firstname='Nusaiba' and lastname='Sadifa';
-Ans: This command will delete the record of Nusaiba Sadifa from the table employee.
-03. DELETE FROM employee;
+** Alter Commands **
+01. What is alter command in sql?
+Ans: Alter command is used to change the structure/schema of the table.
+02. What are the differences between update and alter commands in sql?
+Ans: Update command is used to update the data of the table. Alter command is used to change/alter the structure/schema of the table. Structure means schema.
+03. ALTER TABLE employee ADD COLUMN jobtitle varchar(20);
+Ans: This command will add a new column jobtitle to the table employee.
+04. ALTER TABLE employee DROP COLUMN jobtitle;
+Ans: This command will delete the column jobtitle from the table employee.
+04. ALTER TABLE employee RENAME COLUMN jobtitle TO title;
+Ans: This command will rename the column jobtitle to title.
+05. ALTER TABLE employee modify COLUMN firstname varchar(30);
+Anks: This command will modify the datatype of the column firstname to varchar(30).
+06. ALTER TABLE employee drop PRIMARY KEY;
+Ans: This command will delete the primary key of the table employee.
+07. ALTER TABLE employee ADD PRIMARY KEY(id);
+Ans: This command will add a primary key to the table employee.
+*/
+
+/*
+** DDL vs DML **
+01. What is DDL?
+Ans: DDL stands for Data Definition Language. DDL is used to create table/alter table/drop table the structure/schema of the table.
+02. What is DML?
+Ans: DML stands for Data Manipulation Language. DML is used to insert/update/delete only the data(records) directly of the table.
+03. What is DQL?
+Ans: DQL stands for Data Query Language. DQL is used to read the data of the table.
+04. What is DCL?
+Ans: DCL stands for Data Control Language. DCL is used to grant/revoke/lock/unlock the access of the data.
+05. What is TCL?
+Ans: TCL stands for Transaction Control Language. TCL is used to commit/rollback the transaction.
+06. What is DDL vs DML?
+Ans: DDL stands for Data Definition Language. DDL is used to create/alter/delete the structure of the table. DML stands for Data Manipulation Language. DML is used to insert/update/delete the data of the table.
+07. What are the differences between DDL vs DML?
+Ans: DDL stands for Data Definition Language. DDL is used to create/alter/delete the structure of the table. DML stands for Data Manipulation Language. DML is used to insert/update/delete the data of the table.
+08. What are the differences between DQL vs DML?
+Ans: DQL stands for Data Query Language. DQL is used to read the data of the table. DML stands for Data Manipulation Language. DML is used to insert/update/delete the data of the table.
+09. What are the differences between DCL vs DML?
+Ans: DCL stands for Data Control Language. DCL is used to grant/revoke/lock/unlock the access of the data. DML stands for Data Manipulation Language. DML is used to insert/update/delete the data of the table.
+10. What are the differences between TCL vs DML?
+Ans: TCL stands for Transaction Control Language. TCL is used to commit/rollback the transaction. DML stands for Data Manipulation Language. DML is used to insert/update/delete the data of the table.
+11. What are the differences between DDL vs DQL?
+Ans: DDL stands for Data Definition Language. DDL is used to create/alter/delete the structure of the table. DQL stands for Data Query Language. DQL is used to read the data of the table.
+12. What are the differences between DDL vs DCL?
+Ans: DDL stands for Data Definition Language. DDL is used to create/alter/delete the structure of the table. DCL stands for Data Control Language. DCL is used to grant/revoke/lock/unlock the access of the data.
+13. What are the differences between DDL vs TCL?
+Ans: DDL stands for Data Definition Language. DDL is used to create/alter/delete the structure of the table. TCL stands for Transaction Control Language. TCL is used to commit/rollback the transaction.
+*/
+
+/*
+01. What is truncate?
+Ans: Truncate is used to delete all the records/data of the table. So, it means to remove all records. But it is a DDL command because Truncate internally drops the table and recreates the table. What the usefulness of it is when there are a lot of records and deleting is so painful, Truncate helps to overcome such situation. Delete is inefficient and difficult but Truncate is usefull as it recreates the table internally.
+02. truncate TABLE employee;
 Ans: This command will delete all the records of the table employee.
-04. DELETE FROM employee WHERE firstname='Nusaiba' or lastname='Sadifa';
+03. truncate TABLE employee WHERE id=3;
+Ans: This command will delete the record of id 3 from the table employee.
+04. truncate TABLE employee WHERE firstname='Nusaiba' and lastname='Sadifa';
+Ans: This command will delete the record of Nusaiba Sadifa from the table employee.
+05. truncate TABLE employee WHERE firstname='Nusaiba';
+Ans: This command will delete the record of Nusaiba from the table employee.
+06. truncate TABLE employee WHERE firstname='Nusaiba' or lastname='Sadifa';
 Ans: This command will delete the record of Nusaiba or Sadifa from the table employee.
-05. DELETE FROM employee WHERE firstname='Nusaiba' and lastname='Sadifa' or age=2;
+07. truncate TABLE employee WHERE firstname='Nusaiba' and lastname='Sadifa' or age=2;
 Ans: This command will delete the record of Nusaiba Sadifa or age 2 from the table employee.
-06. DELETE FROM employee WHERE firstname='Nusaiba' and lastname='Sadifa' and age=2;
-Ans: This command will delete the record of Nusaiba Sadifa and age 2 from the table employee.
+08. truncate TABLE employee WHERE firstname='Nusaiba' and lastname='Sadifa' and age=2;
+09. What are the differences between truncate and delete?
+Ans: 
 */
 
 /*
