@@ -1,4 +1,5 @@
 /*
+-> To open the terminal of mysql, run the below command
 mysql -h localhost -P 3306 -u root -p
 DDL command
 show databases;
@@ -121,7 +122,7 @@ Primary key - uniquely indentify each record in the table
     1,
     'Nusaiba',
     'Sadifa',
-    2,
+    2,  
     21000,
     'Gazaria'
 );
