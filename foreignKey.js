@@ -186,6 +186,8 @@ Ans: Yes, we can insert seed data into the table.
 01. insert into students(student_fname, student_lname, student_email,student_phone, selected_course, years_of_exp, student_company, batch_date, source_of_joining, location) values('Nahiyan', 'Prodhan', 'nahiyan0335@gmail.com', '493359', 5, 3, 'Flipkart', '05-05-2023', 'LinkedIn', 'Dhaka'); 
 -> With Foregin Key <-
 => After droping the table students <=
+-> parent table - courses table
+-> child table - students table
 01. create table students(
     student_id int AUTO_INCREMENT,
     student_fname varchar(30) NOT NULL,
