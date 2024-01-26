@@ -176,6 +176,7 @@ Ans: Yes, we can insert seed data into the table.
 04. insert into students(student_fname, student_lname, student_email,student_phone, years_of_exp, student_company, batch_date, source_of_joining, location) values('Nusaiba', 'Jahan', 'nusaiba0335@gmail.com', '493359', 3, 'Flipkart', '05-05-2023', 'LinkedIn', 'Dhaka');
 
 05. insert into students(student_fname, student_lname, student_email,student_phone, selected_course, years_of_exp, batch_date, source_of_joining, location) values('Farjana', 'Akter', 'farjana0335@gmail.com', '403350', 3, 12, '19-02-2023', 'google', 'Gazaria');
+
 06. insert into students(student_fname, student_lname, student_email,student_phone, selected_course, years_of_exp, batch_date, source_of_joining, location) values('Omaer', 'Atiqur', 'omaer0335@gmail.com', '4300034', 4, 3, 12, 'Google', 'Munshiganj');
 
 // select few record from the students table;
@@ -183,7 +184,9 @@ Ans: Yes, we can insert seed data into the table.
 
 ** Foreign Key **
 // the courses table has four courses. But I will seed data of number 5 in the students table to do wrong and then using foreign key we will fix it. Now after that we cannot insert number 5 course in the courses table. Here parent table is courses table as students(child table) table selected_course depends on it.
+
 01. insert into students(student_fname, student_lname, student_email,student_phone, selected_course, years_of_exp, student_company, batch_date, source_of_joining, location) values('Nahiyan', 'Prodhan', 'nahiyan0335@gmail.com', '493359', 5, 3, 'Flipkart', '05-05-2023', 'LinkedIn', 'Dhaka'); 
+
 -> With Foregin Key <-
 => After droping the table students <=
 -> parent table - courses table
@@ -207,4 +210,14 @@ Ans: Yes, we can insert seed data into the table.
     UNIQUE KEY(student_email),
     FOREIGN KEY(selected_course) REFERENCES courses(course_id)
 );
+=> Now record of course_id above 4 cannot be accepted
+01. delete from courses where course_id=2;
+Ans: Cannot delete or update a parent row: a foreign key constraint fails (`trendytech`.`students`, CONSTRAINT `students_ibfk_1` FOREIGN KEY (`selected_course`) REFERENCES `courses` (`course_id`))
+*/
+
+/*
+01. What is foreign key?
+Ans: Foreign key is a column or a set of columns in one table that refers to the primary key of another table.
+02. What is foreign key constraint?
+Ans: Foreign key constraint is a constraint that prevents actions that would destroy links between tables. Selected_course is a foreign key in students table which refers to course_id(primary key) in courses table. The table with the foreign key is called the child table i.e. sutdents table. The table with primary key is called parent or referenced table i.e. courses table or reference table. So, constraints are used to limit the type of data that can go into a table. This ensures the accurecy and reliablity of the data maintained in a particular table. If there is any violation of foreign key, then action will be aborted.
 */
